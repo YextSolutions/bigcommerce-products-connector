@@ -1,0 +1,16 @@
+{
+  "$id": "product.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Product-default",
+  "entityType": "product",
+  "fields": [
+    "bigCommerce_availabilityStatus",
+    "bigCommerce_freeShippingStatus",
+    "bigCommerce_productCategory",
+    "bigCommerce_productType",
+    "bigCommerce_reviewsCount",
+    "bigCommerce_reviewsRatingSum",
+    "bigCommerce_salePrice"
+  ],
+  "required": []
+}
