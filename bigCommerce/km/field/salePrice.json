@@ -1,8 +1,0 @@
-{
-  "$id": "bigCommerce_salePrice",
-  "$schema": "https://schema.yext.com/config/km/field/v1",
-  "displayName": "BigCommerce Sale Price",
-  "group": "NONE",
-  "localization": "PRIMARY_ONLY",
-  "typeId": "bigCommerce_salePrice"
-}
