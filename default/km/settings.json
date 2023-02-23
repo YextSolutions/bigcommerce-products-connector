@@ -27,11 +27,6 @@
       "disabled": true
     },
     {
-      "entityType": "ce_bigCommerceProductCategory",
-      "defaultFieldEligibilityGroup": "ce_bigCommerceProductCategory.default",
-      "disabled": true
-    },
-    {
       "entityType": "event",
       "disabled": true
     },
