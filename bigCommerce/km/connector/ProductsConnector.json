@@ -5,43 +5,14 @@
   "entityType": "product",
   "source": {
     "sourceConfig": {
-      "apiPullConfig": {
-        "requestType": "GET",
-        "url": "https://api.bigcommerce.com/stores/${{store_hash}}/v3/catalog/products",
-        "authentication": {
-          "apiKey": {
-            "key": "X-Auth-Token",
-            "value": "${{access_token}}",
-            "setAsHeader": true
-          }
-        },
-        "paginationControl": {
-          "pageBasedPagination": {
-            "pageKey": "page",
-            "pageStartValue": 1,
-            "totalPages": {
-              "key": "meta.pagination.total_pages",
-              "inHeader": false
-            },
-            "limitKey": "limit",
-            "limitValue": 20
-          }
-        },
-        "rateLimit": {
-          "unit": "MINUTE",
-          "quantity": 300
-        },
-        "headers": {},
-        "queryParams": {
-          "include": "images,primary_image"
-        },
-        "dataFormat": "JSON"
+      "nativeSourceConfig": {
+        "source": "bigCommerce",
+        "operation": "fetchProducts",
+        "inputs": {
+          "accessToken": "${{access_token}}", 
+          "storeHash": "${{store_hash}}"
+        }
       }
-    },
-    "baseSelector": {
-      "type": "JSON",
-      "header": "Entity Container",
-      "path": "data"
     },
     "selectors": [
       {
