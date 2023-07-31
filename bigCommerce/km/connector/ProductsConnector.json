@@ -1,6 +1,6 @@
 {
     "$id": "bigCommerce_ProductsConnector",
-    "$schema": "https://schema.yext.com/config/km/connector/v3",
+    "$schema": "https://schema.yext.com/config/km/connector/v4",
     "displayName": "BigCommerce Products Connector",
     "entityTypes": [
         "product"
