@@ -8,7 +8,7 @@
     "source": {
         "sourceConfig": {
             "nativeSourceConfig": {
-                "source": "bigCommerce",
+                "source": "bigcommerce",
                 "operation": "fetchProducts",
                 "inputs": {
                     "accessToken": "${{access_token}}",
