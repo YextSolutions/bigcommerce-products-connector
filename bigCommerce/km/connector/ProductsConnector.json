@@ -1,611 +1,627 @@
 {
-  "$id": "bigCommerce_ProductsConnector",
-  "$schema": "https://schema.yext.com/config/km/connector/v3",
-  "displayName": "BigCommerce Products Connector",
-  "entityType": "product",
-  "source": {
-    "sourceConfig": {
-      "nativeSourceConfig": {
-        "source": "bigCommerce",
-        "operation": "fetchProducts",
-        "inputs": {
-          "accessToken": "${{access_token}}", 
-          "storeHash": "${{store_hash}}"
+    "$id": "bigCommerce_ProductsConnector",
+    "$schema": "https://schema.yext.com/config/km/connector/v3",
+    "displayName": "BigCommerce Products Connector",
+    "entityTypes": [
+        "product"
+    ],
+    "source": {
+        "sourceConfig": {
+            "nativeSourceConfig": {
+                "source": "bigCommerce",
+                "operation": "fetchProducts",
+                "inputs": {
+                    "accessToken": "${{access_token}}",
+                    "storeHash": "${{store_hash}}"
+                }
+            }
+        },
+        "selectors": [
+            {
+                "type": "JSON",
+                "header": "id",
+                "path": "id"
+            },
+            {
+                "type": "JSON",
+                "header": "name",
+                "path": "name"
+            },
+            {
+                "type": "JSON",
+                "header": "type",
+                "path": "type"
+            },
+            {
+                "type": "JSON",
+                "header": "sku",
+                "path": "sku"
+            },
+            {
+                "type": "JSON",
+                "header": "description",
+                "path": "description"
+            },
+            {
+                "type": "JSON",
+                "header": "weight",
+                "path": "weight"
+            },
+            {
+                "type": "JSON",
+                "header": "width",
+                "path": "width"
+            },
+            {
+                "type": "JSON",
+                "header": "depth",
+                "path": "depth"
+            },
+            {
+                "type": "JSON",
+                "header": "height",
+                "path": "height"
+            },
+            {
+                "type": "JSON",
+                "header": "price",
+                "path": "price"
+            },
+            {
+                "type": "JSON",
+                "header": "cost_price",
+                "path": "cost_price"
+            },
+            {
+                "type": "JSON",
+                "header": "retail_price",
+                "path": "retail_price"
+            },
+            {
+                "type": "JSON",
+                "header": "sale_price",
+                "path": "sale_price"
+            },
+            {
+                "type": "JSON",
+                "header": "map_price",
+                "path": "map_price"
+            },
+            {
+                "type": "JSON",
+                "header": "tax_class_id",
+                "path": "tax_class_id"
+            },
+            {
+                "type": "JSON",
+                "header": "product_tax_code",
+                "path": "product_tax_code"
+            },
+            {
+                "type": "JSON",
+                "header": "calculated_price",
+                "path": "calculated_price"
+            },
+            {
+                "type": "JSON",
+                "header": "categories",
+                "path": "categories"
+            },
+            {
+                "type": "JSON",
+                "header": "brand_id",
+                "path": "brand_id"
+            },
+            {
+                "type": "JSON",
+                "header": "option_set_id",
+                "path": "option_set_id"
+            },
+            {
+                "type": "JSON",
+                "header": "option_set_display",
+                "path": "option_set_display"
+            },
+            {
+                "type": "JSON",
+                "header": "inventory_level",
+                "path": "inventory_level"
+            },
+            {
+                "type": "JSON",
+                "header": "inventory_warning_level",
+                "path": "inventory_warning_level"
+            },
+            {
+                "type": "JSON",
+                "header": "inventory_tracking",
+                "path": "inventory_tracking"
+            },
+            {
+                "type": "JSON",
+                "header": "reviews_rating_sum",
+                "path": "reviews_rating_sum"
+            },
+            {
+                "type": "JSON",
+                "header": "reviews_count",
+                "path": "reviews_count"
+            },
+            {
+                "type": "JSON",
+                "header": "total_sold",
+                "path": "total_sold"
+            },
+            {
+                "type": "JSON",
+                "header": "fixed_cost_shipping_price",
+                "path": "fixed_cost_shipping_price"
+            },
+            {
+                "type": "JSON",
+                "header": "is_free_shipping",
+                "path": "is_free_shipping"
+            },
+            {
+                "type": "JSON",
+                "header": "is_visible",
+                "path": "is_visible"
+            },
+            {
+                "type": "JSON",
+                "header": "is_featured",
+                "path": "is_featured"
+            },
+            {
+                "type": "JSON",
+                "header": "related_products",
+                "path": "related_products"
+            },
+            {
+                "type": "JSON",
+                "header": "warranty",
+                "path": "warranty"
+            },
+            {
+                "type": "JSON",
+                "header": "bin_picking_number",
+                "path": "bin_picking_number"
+            },
+            {
+                "type": "JSON",
+                "header": "layout_file",
+                "path": "layout_file"
+            },
+            {
+                "type": "JSON",
+                "header": "upc",
+                "path": "upc"
+            },
+            {
+                "type": "JSON",
+                "header": "mpn",
+                "path": "mpn"
+            },
+            {
+                "type": "JSON",
+                "header": "gtin",
+                "path": "gtin"
+            },
+            {
+                "type": "JSON",
+                "header": "search_keywords",
+                "path": "search_keywords"
+            },
+            {
+                "type": "JSON",
+                "header": "availability",
+                "path": "availability"
+            },
+            {
+                "type": "JSON",
+                "header": "availability_description",
+                "path": "availability_description"
+            },
+            {
+                "type": "JSON",
+                "header": "gift_wrapping_options_type",
+                "path": "gift_wrapping_options_type"
+            },
+            {
+                "type": "JSON",
+                "header": "gift_wrapping_options_list",
+                "path": "gift_wrapping_options_list"
+            },
+            {
+                "type": "JSON",
+                "header": "sort_order",
+                "path": "sort_order"
+            },
+            {
+                "type": "JSON",
+                "header": "condition",
+                "path": "condition"
+            },
+            {
+                "type": "JSON",
+                "header": "is_condition_shown",
+                "path": "is_condition_shown"
+            },
+            {
+                "type": "JSON",
+                "header": "order_quantity_minimum",
+                "path": "order_quantity_minimum"
+            },
+            {
+                "type": "JSON",
+                "header": "order_quantity_maximum",
+                "path": "order_quantity_maximum"
+            },
+            {
+                "type": "JSON",
+                "header": "page_title",
+                "path": "page_title"
+            },
+            {
+                "type": "JSON",
+                "header": "meta_keywords",
+                "path": "meta_keywords"
+            },
+            {
+                "type": "JSON",
+                "header": "meta_description",
+                "path": "meta_description"
+            },
+            {
+                "type": "JSON",
+                "header": "date_created",
+                "path": "date_created"
+            },
+            {
+                "type": "JSON",
+                "header": "date_modified",
+                "path": "date_modified"
+            },
+            {
+                "type": "JSON",
+                "header": "view_count",
+                "path": "view_count"
+            },
+            {
+                "type": "JSON",
+                "header": "preorder_release_date",
+                "path": "preorder_release_date"
+            },
+            {
+                "type": "JSON",
+                "header": "preorder_message",
+                "path": "preorder_message"
+            },
+            {
+                "type": "JSON",
+                "header": "is_preorder_only",
+                "path": "is_preorder_only"
+            },
+            {
+                "type": "JSON",
+                "header": "is_price_hidden",
+                "path": "is_price_hidden"
+            },
+            {
+                "type": "JSON",
+                "header": "price_hidden_label",
+                "path": "price_hidden_label"
+            },
+            {
+                "type": "JSON",
+                "header": "custom_url.url",
+                "path": "custom_url.url"
+            },
+            {
+                "type": "JSON",
+                "header": "custom_url.is_customized",
+                "path": "custom_url.is_customized"
+            },
+            {
+                "type": "JSON",
+                "header": "base_variant_id",
+                "path": "base_variant_id"
+            },
+            {
+                "type": "JSON",
+                "header": "open_graph_type",
+                "path": "open_graph_type"
+            },
+            {
+                "type": "JSON",
+                "header": "open_graph_title",
+                "path": "open_graph_title"
+            },
+            {
+                "type": "JSON",
+                "header": "open_graph_description",
+                "path": "open_graph_description"
+            },
+            {
+                "type": "JSON",
+                "header": "open_graph_use_meta_description",
+                "path": "open_graph_use_meta_description"
+            },
+            {
+                "type": "JSON",
+                "header": "open_graph_use_product_name",
+                "path": "open_graph_use_product_name"
+            },
+            {
+                "type": "JSON",
+                "header": "open_graph_use_image",
+                "path": "open_graph_use_image"
+            },
+            {
+                "type": "JSON",
+                "header": "Image URL",
+                "path": "images[*].url_standard"
+            },
+            {
+                "type": "JSON",
+                "header": "Primary Image ",
+                "path": "primary_image.url_standard"
+            }
+        ]
+    },
+    "transforms": [
+        {
+            "fixCapitalization": {
+                "inputHeaders": {
+                    "headers": [
+                        "type",
+                        "availability"
+                    ]
+                },
+                "cleanOption": "PROPER_CASE"
+            }
+        },
+        {
+            "findAndReplace": {
+                "inputHeaders": {
+                    "headers": [
+                        "type"
+                    ]
+                },
+                "valueToFind": {
+                    "plainText": {
+                        "value": "Physical",
+                        "ignoreCase": false
+                    }
+                },
+                "replacement": "Physical Product"
+            }
+        },
+        {
+            "findAndReplace": {
+                "inputHeaders": {
+                    "headers": [
+                        "type"
+                    ]
+                },
+                "valueToFind": {
+                    "plainText": {
+                        "value": "Digital",
+                        "ignoreCase": false
+                    }
+                },
+                "replacement": "Digital Product"
+            }
+        },
+        {
+            "addColumn": {
+                "newColumnHeader": "URL Transform - Front ",
+                "columnValue": "https://${{store_name}}.mybigcommerce.com"
+            }
+        },
+        {
+            "mergeColumns": {
+                "inputHeaders": [
+                    "URL Transform - Front ",
+                    "custom_url.url"
+                ],
+                "newColumnHeader": "Product URL",
+                "delimiter": ""
+            }
+        },
+        {
+            "addColumn": {
+                "newColumnHeader": "Currency Variable ",
+                "columnValue": "${{retail_price_currency}}"
+            }
+        },
+        {
+            "addColumn": {
+                "newColumnHeader": "Sale Price Currency Variable",
+                "columnValue": "${{sale_price_currency}}"
+            }
+        },
+        {
+            "findAndReplace": {
+                "inputHeaders": {
+                    "headers": [
+                        "is_free_shipping"
+                    ]
+                },
+                "valueToFind": {
+                    "plainText": {
+                        "value": "true",
+                        "ignoreCase": false
+                    }
+                },
+                "replacement": "Free Shipping"
+            }
+        },
+        {
+            "findAndReplace": {
+                "inputHeaders": {
+                    "headers": [
+                        "is_free_shipping"
+                    ]
+                },
+                "valueToFind": {
+                    "plainText": {
+                        "value": "false",
+                        "ignoreCase": false
+                    }
+                },
+                "replacement": "See product page for shipping details."
+            }
+        },
+        {
+            "convertToRichText": {
+                "inputHeaders": {
+                    "headers": [
+                        "description"
+                    ]
+                },
+                "inputFormat": "HTML"
+            }
         }
-      }
-    },
-    "selectors": [
-      {
-        "type": "JSON",
-        "header": "id",
-        "path": "id"
-      },
-      {
-        "type": "JSON",
-        "header": "name",
-        "path": "name"
-      },
-      {
-        "type": "JSON",
-        "header": "type",
-        "path": "type"
-      },
-      {
-        "type": "JSON",
-        "header": "sku",
-        "path": "sku"
-      },
-      {
-        "type": "JSON",
-        "header": "description",
-        "path": "description"
-      },
-      {
-        "type": "JSON",
-        "header": "weight",
-        "path": "weight"
-      },
-      {
-        "type": "JSON",
-        "header": "width",
-        "path": "width"
-      },
-      {
-        "type": "JSON",
-        "header": "depth",
-        "path": "depth"
-      },
-      {
-        "type": "JSON",
-        "header": "height",
-        "path": "height"
-      },
-      {
-        "type": "JSON",
-        "header": "price",
-        "path": "price"
-      },
-      {
-        "type": "JSON",
-        "header": "cost_price",
-        "path": "cost_price"
-      },
-      {
-        "type": "JSON",
-        "header": "retail_price",
-        "path": "retail_price"
-      },
-      {
-        "type": "JSON",
-        "header": "sale_price",
-        "path": "sale_price"
-      },
-      {
-        "type": "JSON",
-        "header": "map_price",
-        "path": "map_price"
-      },
-      {
-        "type": "JSON",
-        "header": "tax_class_id",
-        "path": "tax_class_id"
-      },
-      {
-        "type": "JSON",
-        "header": "product_tax_code",
-        "path": "product_tax_code"
-      },
-      {
-        "type": "JSON",
-        "header": "calculated_price",
-        "path": "calculated_price"
-      },
-      {
-        "type": "JSON",
-        "header": "categories",
-        "path": "categories"
-      },
-      {
-        "type": "JSON",
-        "header": "brand_id",
-        "path": "brand_id"
-      },
-      {
-        "type": "JSON",
-        "header": "option_set_id",
-        "path": "option_set_id"
-      },
-      {
-        "type": "JSON",
-        "header": "option_set_display",
-        "path": "option_set_display"
-      },
-      {
-        "type": "JSON",
-        "header": "inventory_level",
-        "path": "inventory_level"
-      },
-      {
-        "type": "JSON",
-        "header": "inventory_warning_level",
-        "path": "inventory_warning_level"
-      },
-      {
-        "type": "JSON",
-        "header": "inventory_tracking",
-        "path": "inventory_tracking"
-      },
-      {
-        "type": "JSON",
-        "header": "reviews_rating_sum",
-        "path": "reviews_rating_sum"
-      },
-      {
-        "type": "JSON",
-        "header": "reviews_count",
-        "path": "reviews_count"
-      },
-      {
-        "type": "JSON",
-        "header": "total_sold",
-        "path": "total_sold"
-      },
-      {
-        "type": "JSON",
-        "header": "fixed_cost_shipping_price",
-        "path": "fixed_cost_shipping_price"
-      },
-      {
-        "type": "JSON",
-        "header": "is_free_shipping",
-        "path": "is_free_shipping"
-      },
-      {
-        "type": "JSON",
-        "header": "is_visible",
-        "path": "is_visible"
-      },
-      {
-        "type": "JSON",
-        "header": "is_featured",
-        "path": "is_featured"
-      },
-      {
-        "type": "JSON",
-        "header": "related_products",
-        "path": "related_products"
-      },
-      {
-        "type": "JSON",
-        "header": "warranty",
-        "path": "warranty"
-      },
-      {
-        "type": "JSON",
-        "header": "bin_picking_number",
-        "path": "bin_picking_number"
-      },
-      {
-        "type": "JSON",
-        "header": "layout_file",
-        "path": "layout_file"
-      },
-      {
-        "type": "JSON",
-        "header": "upc",
-        "path": "upc"
-      },
-      {
-        "type": "JSON",
-        "header": "mpn",
-        "path": "mpn"
-      },
-      {
-        "type": "JSON",
-        "header": "gtin",
-        "path": "gtin"
-      },
-      {
-        "type": "JSON",
-        "header": "search_keywords",
-        "path": "search_keywords"
-      },
-      {
-        "type": "JSON",
-        "header": "availability",
-        "path": "availability"
-      },
-      {
-        "type": "JSON",
-        "header": "availability_description",
-        "path": "availability_description"
-      },
-      {
-        "type": "JSON",
-        "header": "gift_wrapping_options_type",
-        "path": "gift_wrapping_options_type"
-      },
-      {
-        "type": "JSON",
-        "header": "gift_wrapping_options_list",
-        "path": "gift_wrapping_options_list"
-      },
-      {
-        "type": "JSON",
-        "header": "sort_order",
-        "path": "sort_order"
-      },
-      {
-        "type": "JSON",
-        "header": "condition",
-        "path": "condition"
-      },
-      {
-        "type": "JSON",
-        "header": "is_condition_shown",
-        "path": "is_condition_shown"
-      },
-      {
-        "type": "JSON",
-        "header": "order_quantity_minimum",
-        "path": "order_quantity_minimum"
-      },
-      {
-        "type": "JSON",
-        "header": "order_quantity_maximum",
-        "path": "order_quantity_maximum"
-      },
-      {
-        "type": "JSON",
-        "header": "page_title",
-        "path": "page_title"
-      },
-      {
-        "type": "JSON",
-        "header": "meta_keywords",
-        "path": "meta_keywords"
-      },
-      {
-        "type": "JSON",
-        "header": "meta_description",
-        "path": "meta_description"
-      },
-      {
-        "type": "JSON",
-        "header": "date_created",
-        "path": "date_created"
-      },
-      {
-        "type": "JSON",
-        "header": "date_modified",
-        "path": "date_modified"
-      },
-      {
-        "type": "JSON",
-        "header": "view_count",
-        "path": "view_count"
-      },
-      {
-        "type": "JSON",
-        "header": "preorder_release_date",
-        "path": "preorder_release_date"
-      },
-      {
-        "type": "JSON",
-        "header": "preorder_message",
-        "path": "preorder_message"
-      },
-      {
-        "type": "JSON",
-        "header": "is_preorder_only",
-        "path": "is_preorder_only"
-      },
-      {
-        "type": "JSON",
-        "header": "is_price_hidden",
-        "path": "is_price_hidden"
-      },
-      {
-        "type": "JSON",
-        "header": "price_hidden_label",
-        "path": "price_hidden_label"
-      },
-      {
-        "type": "JSON",
-        "header": "custom_url.url",
-        "path": "custom_url.url"
-      },
-      {
-        "type": "JSON",
-        "header": "custom_url.is_customized",
-        "path": "custom_url.is_customized"
-      },
-      {
-        "type": "JSON",
-        "header": "base_variant_id",
-        "path": "base_variant_id"
-      },
-      {
-        "type": "JSON",
-        "header": "open_graph_type",
-        "path": "open_graph_type"
-      },
-      {
-        "type": "JSON",
-        "header": "open_graph_title",
-        "path": "open_graph_title"
-      },
-      {
-        "type": "JSON",
-        "header": "open_graph_description",
-        "path": "open_graph_description"
-      },
-      {
-        "type": "JSON",
-        "header": "open_graph_use_meta_description",
-        "path": "open_graph_use_meta_description"
-      },
-      {
-        "type": "JSON",
-        "header": "open_graph_use_product_name",
-        "path": "open_graph_use_product_name"
-      },
-      {
-        "type": "JSON",
-        "header": "open_graph_use_image",
-        "path": "open_graph_use_image"
-      },
-      {
-        "type": "JSON",
-        "header": "Image URL",
-        "path": "images[*].url_standard"
-      },
-      {
-        "type": "JSON",
-        "header": "Primary Image ",
-        "path": "primary_image.url_standard"
-      }
-    ]
-  },
-  "transforms": [
-    {
-      "fixCapitalization": {
-        "inputHeaders": {
-          "headers": [
-            "type",
-            "availability"
-          ]
+    ],
+    "mappings": [
+        {
+            "field": "gtin",
+            "header": "gtin",
+            "subfieldPath": []
         },
-        "cleanOption": "PROPER_CASE"
-      }
-    },
-    {
-      "findAndReplace": {
-        "inputHeaders": {
-          "headers": [
-            "type"
-          ]
+        {
+            "field": "primaryPhoto",
+            "header": "Primary Image ",
+            "subfieldPath": [
+                {
+                    "name": "image"
+                },
+                {
+                    "name": "url"
+                }
+            ]
         },
-        "valueToFind": {
-          "plainText": {
-            "value": "Physical",
-            "ignoreCase": false
-          }
+        {
+            "field": "photoGallery",
+            "header": "Image URL",
+            "subfieldPath": [
+                {
+                    "name": "image"
+                },
+                {
+                    "name": "url"
+                }
+            ]
         },
-        "replacement": "Physical Product"
-      }
-    },
-    {
-      "findAndReplace": {
-        "inputHeaders": {
-          "headers": [
-            "type"
-          ]
+        {
+            "field": "richTextDescriptionV2",
+            "header": "description",
+            "subfieldPath": []
         },
-        "valueToFind": {
-          "plainText": {
-            "value": "Digital",
-            "ignoreCase": false
-          }
+        {
+            "field": "mpn",
+            "header": "mpn",
+            "subfieldPath": []
         },
-        "replacement": "Digital Product"
-      }
-    },
-    {
-      "addColumn": {
-        "newColumnHeader": "URL Transform - Front ",
-        "columnValue": "https://${{store_name}}.mybigcommerce.com"
-      }
-    },
-    {
-      "mergeColumns": {
-        "inputHeaders": [
-          "URL Transform - Front ",
-          "custom_url.url"
-        ],
-        "newColumnHeader": "Product URL",
-        "delimiter": ""
-      }
-    },
-    {
-      "addColumn": {
-        "newColumnHeader": "Currency Variable ",
-        "columnValue": "${{retail_price_currency}}"
-      }
-    },
-    {
-      "addColumn": {
-        "newColumnHeader": "Sale Price Currency Variable",
-        "columnValue": "${{sale_price_currency}}"
-      }
-    },
-    {
-      "findAndReplace": {
-        "inputHeaders": {
-          "headers": [
-            "is_free_shipping"
-          ]
+        {
+            "field": "bigCommerce_availabilityStatus",
+            "header": "availability",
+            "subfieldPath": []
         },
-        "valueToFind": {
-          "plainText": {
-            "value": "true",
-            "ignoreCase": false
-          }
+        {
+            "field": "keywords",
+            "header": "search_keywords",
+            "subfieldPath": []
         },
-        "replacement": "Free Shipping"
-      }
+        {
+            "field": "bigCommerce_productType",
+            "header": "type",
+            "subfieldPath": []
+        },
+        {
+            "field": "bigCommerce_salePrice",
+            "header": "sale_price",
+            "subfieldPath": [
+                {
+                    "name": "salePriceValue"
+                }
+            ]
+        },
+        {
+            "field": "bigCommerce_salePrice",
+            "header": "Sale Price Currency Variable",
+            "subfieldPath": [
+                {
+                    "name": "salePriceCurrency"
+                }
+            ]
+        },
+        {
+            "field": "price",
+            "header": "price",
+            "subfieldPath": [
+                {
+                    "name": "value"
+                }
+            ]
+        },
+        {
+            "field": "landingPageUrl",
+            "header": "Product URL",
+            "subfieldPath": []
+        },
+        {
+            "field": "name",
+            "header": "name",
+            "subfieldPath": []
+        },
+        {
+            "field": "bigCommerce_freeShippingStatus",
+            "header": "is_free_shipping",
+            "subfieldPath": []
+        },
+        {
+            "field": "entityId",
+            "header": "id",
+            "subfieldPath": []
+        },
+        {
+            "field": "sku",
+            "header": "sku",
+            "subfieldPath": []
+        },
+        {
+            "field": "price",
+            "header": "Currency Variable ",
+            "subfieldPath": [
+                {
+                    "name": "currencyCode"
+                }
+            ]
+        },
+        {
+            "field": "bigCommerce_reviewsRatingSum",
+            "header": "reviews_rating_sum",
+            "subfieldPath": []
+        },
+        {
+            "field": "bigCommerce_reviewsCount",
+            "header": "reviews_count",
+            "subfieldPath": []
+        }
+    ],
+    "scheduleConfig": {
+        "customSchedule": {
+            "timeZone": "Pacific/Easter",
+            "startDate": "2023-02-15",
+            "startTime": "00:00",
+            "frequencyType": "HOURLY"
+        },
+        "runMode": "COMPREHENSIVE"
     },
-    {
-      "findAndReplace": {
-        "inputHeaders": {
-          "headers": [
-            "is_free_shipping"
-          ]
-        },
-        "valueToFind": {
-          "plainText": {
-            "value": "false",
-            "ignoreCase": false
-          }
-        },
-        "replacement": "See product page for shipping details."
-      }
+    "comprehensiveModeConfig": {
+        "comprehensiveSet": "ENTITIES_CREATED_BY_THIS_CONNECTOR",
+        "actionOnMissingEntities": "DELETE"
     }
-  ],
-  "mappings": [
-    {
-      "field": "gtin",
-      "header": "gtin",
-      "subfieldPath": []
-    },
-    {
-      "field": "primaryPhoto",
-      "header": "Primary Image ",
-      "subfieldPath": [
-        {
-          "name": "image"
-        },
-        {
-          "name": "url"
-        }
-      ]
-    },
-    {
-      "field": "photoGallery",
-      "header": "Image URL",
-      "subfieldPath": [
-        {
-          "name": "image"
-        },
-        {
-          "name": "url"
-        }
-      ]
-    },
-    {
-      "field": "richTextDescription",
-      "header": "description",
-      "subfieldPath": []
-    },
-    {
-      "field": "mpn",
-      "header": "mpn",
-      "subfieldPath": []
-    },
-    {
-      "field": "bigCommerce_availabilityStatus",
-      "header": "availability",
-      "subfieldPath": []
-    },
-    {
-      "field": "keywords",
-      "header": "search_keywords",
-      "subfieldPath": []
-    },
-    {
-      "field": "bigCommerce_productType",
-      "header": "type",
-      "subfieldPath": []
-    },
-    {
-      "field": "bigCommerce_salePrice",
-      "header": "sale_price",
-      "subfieldPath": [
-        {
-          "name": "salePriceValue"
-        }
-      ]
-    },
-    {
-      "field": "bigCommerce_salePrice",
-      "header": "Sale Price Currency Variable",
-      "subfieldPath": [
-        {
-          "name": "salePriceCurrency"
-        }
-      ]
-    },
-    {
-      "field": "price",
-      "header": "price",
-      "subfieldPath": [
-        {
-          "name": "value"
-        }
-      ]
-    },
-    {
-      "field": "landingPageUrl",
-      "header": "Product URL",
-      "subfieldPath": []
-    },
-    {
-      "field": "name",
-      "header": "name",
-      "subfieldPath": []
-    },
-    {
-      "field": "bigCommerce_freeShippingStatus",
-      "header": "is_free_shipping",
-      "subfieldPath": []
-    },
-    {
-      "field": "entityId",
-      "header": "id",
-      "subfieldPath": []
-    },
-    {
-      "field": "sku",
-      "header": "sku",
-      "subfieldPath": []
-    },
-    {
-      "field": "price",
-      "header": "Currency Variable ",
-      "subfieldPath": [
-        {
-          "name": "currencyCode"
-        }
-      ]
-    },
-    {
-      "field": "bigCommerce_reviewsRatingSum",
-      "header": "reviews_rating_sum",
-      "subfieldPath": []
-    },
-    {
-      "field": "bigCommerce_reviewsCount",
-      "header": "reviews_count",
-      "subfieldPath": []
-    }
-  ],
-  "scheduleConfig": {
-    "customSchedule": {
-      "timeZone": "Pacific/Easter",
-      "startDate": "2023-02-15",
-      "startTime": "00:00",
-      "frequencyType": "HOURLY"
-    },
-    "runMode": "COMPREHENSIVE"
-  }
 }
