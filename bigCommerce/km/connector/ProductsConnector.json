@@ -517,7 +517,11 @@
         {
             "field": "richTextDescriptionV2",
             "header": "description",
-            "subfieldPath": []
+            "subfieldPath": [
+                {
+          "name": "json"
+        }
+            ]
         },
         {
             "field": "mpn",
